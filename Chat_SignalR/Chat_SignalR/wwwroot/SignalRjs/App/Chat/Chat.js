@@ -27,6 +27,9 @@ conexion.start().then(function () {
 document.getElementById("btnEnviar").addEventListener("click", function (event) {
     var usuario = document.getElementById("txtUsuario").value;
     var mensaje = document.getElementById("txtMensaje").value;
+
+    document.getElementById("txtMensaje").value = "";
+    document.getElementById("txtMensaje").focus;
     conexion.invoke("EnviarMensaje", usuario, mensaje).catch(function (err) {
         return console.error(err.toString());
     });
